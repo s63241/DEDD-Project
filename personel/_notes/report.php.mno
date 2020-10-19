@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_sumg1" value="name:s_id;datatype:int,name:ref_p_id;datatype:int,name:ref_dq_id;datatype:string,name:ref_qt_id;datatype:int,name:ref_q1_number;datatype:int,name:s_ip1;datatype:string,name:s_p_id_1;datatype:int,name:s_dateq1;datatype:timestamp,name:s_ip2;datatype:string,name:s_p_id_2;datatype:int,name:s_dateq2;datatype:datetime,name:s_status;datatype:int,name:s_ip3;datatype:string,name:s_p_id_3;datatype:int,name:s_group_no;datatype:int,name:s_dateq3;datatype:datetime,name:s_score;datatype:real" />
+</info>

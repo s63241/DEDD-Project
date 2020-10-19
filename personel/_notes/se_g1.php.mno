@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_showqg1" value="name:qt_id;datatype:int,name:qt_name;datatype:string,name:qt_detail;datatype:blob" />
+	<infoitem key="UD_rsquint1" value="name:q1_id;datatype:int,name:ref_qt_id;datatype:int,name:q1_number;datatype:int,name:q1_score_rank;datatype:real,name:q1_detail;datatype:blob,name:q1_datesave;datatype:timestamp" />
+	<infoitem key="UD_showqg1list" value="name:qt_id;datatype:int,name:qt_name;datatype:string,name:qt_detail;datatype:blob" />
+	<infoitem key="UD_fixdate" value="name:dq_id;datatype:int,name:dq_name;datatype:string,name:dq_date_start;datatype:date,name:dq_date_end;datatype:date,name:dq_date_open1;datatype:date,name:dq_date_close1;datatype:date,name:dq_date_open2;datatype:date,name:dq_date_close2;datatype:date,name:dq_date_open3;datatype:date,name:dq_date_close3;datatype:date" />
+	<infoitem key="UD_peroidassess" value="name:dq_id;datatype:int,name:dq_name;datatype:string,name:dq_date_start;datatype:date,name:dq_date_end;datatype:date,name:dq_date_open1;datatype:date,name:dq_date_close1;datatype:date,name:dq_date_open2;datatype:date,name:dq_date_close2;datatype:date,name:dq_date_open3;datatype:date,name:dq_date_close3;datatype:date" />
+	<infoitem key="UD_showlastascess" value="name:s_id;datatype:int,name:ref_p_id;datatype:int,name:ref_dq_id;datatype:string,name:ref_qt_id;datatype:int,name:ref_q1_number;datatype:int,name:s_ip1;datatype:string,name:s_p_id_1;datatype:int,name:s_dateq1;datatype:timestamp,name:s_ip2;datatype:string,name:s_p_id_2;datatype:int,name:s_dateq2;datatype:datetime,name:s_status;datatype:int,name:s_ip3;datatype:string,name:s_p_id_3;datatype:int,name:s_group_no;datatype:int,name:s_dateq3;datatype:datetime,name:s_score;datatype:real" />
+</info>

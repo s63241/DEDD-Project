@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_showcomment" value="name:c_id;datatype:int,name:c_b1_id;datatype:int,name:c_per_id;datatype:int,name:c_term;datatype:string,name:c_comment1;datatype:blob,name:c_comment2;datatype:blob,name:c_date;datatype:timestamp" />
+	<infoitem key="UD_rspersonel1" value="name:p_id;datatype:int,name:ref_d_id;datatype:int,name:ref_l_id;datatype:int,name:ref_po_id;datatype:int,name:p_username;datatype:string,name:p_password;datatype:string,name:p_firstname;datatype:string,name:p_name;datatype:string,name:p_lastname;datatype:string,name:p_sex;datatype:string,name:p_phone;datatype:string,name:p_email;datatype:string,name:p_address;datatype:string,name:p_status;datatype:string,name:p_birthday;datatype:date,name:p_img;datatype:string,name:p_datesave;datatype:timestamp" />
+</info>
