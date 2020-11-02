@@ -1,4 +1,4 @@
-<h4 class="text-primary prompt-400">::ข้อมูลบุคคลากร::</h4>
+<h4 class="text-primary prompt-400">::ข้อมูลบุคลากร::</h4>
 <table class="table table-hover">
     <tbody>
         <tr>
