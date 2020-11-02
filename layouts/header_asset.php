@@ -3,7 +3,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 #$SITE_URL = 'http://127.0.0.1/Project_180363/5811011802082/dusit/';
-$SITE_URL = 'http://127.0.0.1/Project/';
+$SITE_URL = 'http://deddproject.southeastasia.cloudapp.azure.com/Project/';
 
 ?>
 
