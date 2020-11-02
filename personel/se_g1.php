@@ -57,9 +57,9 @@ $terms = $row_showlastascess['ref_dq_id'];
 $pids = $row_showlastascess['ref_p_id'];
 $termnow = $_GET['term'];
 if ($terms == $termnow & $p_id == $pids) {
-    echo ' คุณได้ประเมินเทอมนี้ไปแล้ว';
+    echo ' คุณได้ทำการประเมินเรียบร้อยแล้ว';
     echo "<script type='text/javascript'>";
-    echo "alert('คุณได้ประเมินเทอมนี้ไปแล้ว');";
+    echo "alert('คุณได้ทำการประเมินเรียบร้อยแล้ว');";
     echo "window.location='index.php';";
     echo "</script>";
 }

@@ -46,9 +46,9 @@ $totalRows_rsconsys = mysql_num_rows($rsconsys);
 <table border="1" cellpadding="0" cellspacing="0" class="table table-hover table-bordered">
     <tr class="info">
         <td width="7%" align="center">รอบ</td>
-        <td width="25%">เจ้าหน้าที่</td>
-        <td width="25%">หัวหน้าฝ่าย</td>
-        <td width="25%">ผู้อำนวยการ</td>
+        <td width="30%">วันเริ่มต้น - สิ้นสุดการประเมิน</td>
+        <td width="20%">เจ้าหน้าที่</td>
+        <td width="20%">หัวหน้าฝ่าย</td>
         <td width="5%">แก้ไข</td>
         <td width="5%">ลบ</td>
     </tr>
@@ -56,6 +56,14 @@ $totalRows_rsconsys = mysql_num_rows($rsconsys);
 do { ?>
         <tr>
             <td><b><?php echo $row_rsconsys['dq_name']; ?></b></td>
+            <td>
+                <p style="color: green">
+                    เปิด : <?php echo date('d/m/Y', strtotime($row_rsconsys['dq_date_open3'])); ?>
+                </p>
+                <p style="color: red">
+                    ปิด : <?php echo date('d/m/Y', strtotime($row_rsconsys['dq_date_close3'])); ?>
+                </p>
+            </td>
             <td>
                 <p style="color: green">
                     เปิด : <?php echo date('d/m/Y', strtotime($row_rsconsys['dq_date_open1'])); ?>
@@ -72,14 +80,7 @@ do { ?>
                     ปิด : <?php echo date('d/m/Y', strtotime($row_rsconsys['dq_date_close2'])); ?>
                 </p>
             </td>
-            <td>
-                <p style="color: green">
-                    เปิด : <?php echo date('d/m/Y', strtotime($row_rsconsys['dq_date_open3'])); ?>
-                </p>
-                <p style="color: red">
-                    ปิด : <?php echo date('d/m/Y', strtotime($row_rsconsys['dq_date_close3'])); ?>
-                </p>
-            </td>
+         
             <td><a href="config.php?dq_id=<?php echo $row_rsconsys['dq_id']; ?>&p=edit" class="btn btn-warning btn-xs">แก้ไข</a></td>
             <td>
                 <a href="config_del_db.php?dq_id=<?php echo $row_rsconsys['dq_id']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('ยืนยันการลบข้อมูล');">

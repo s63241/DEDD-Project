@@ -67,14 +67,14 @@ $dq_date_open1 = $row_fixdate['dq_date_open2'];
 $dq_date_close1 = $row_fixdate['dq_date_close2'];
 $totalScore = 0;
 echo '<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i>';
-echo ' วันที่เริ่มประเมิน : ' . date('d/m/Y', strtotime($datestart));
-echo ' วันที่สิ้นสุด :  ' . date('d/m/Y', strtotime($dateend));
+echo ' วันที่เริ่มประเมิน : ' . date('d/m/Y', strtotime($dq_date_open1));
+echo ' วันที่สิ้นสุด :  ' . date('d/m/Y', strtotime($dq_date_close1));
 echo '</h3>';
-if ($datenow >= $datestart && $datenow <= $dateend) {
+if ($datenow >= $dq_date_open1 && $datenow <= $dq_date_close1) {
     ?>
     <hr>
     <h3 class="text-primary prompt-400"> รอบประเมิน <?php echo $row_peroidassess['dq_name']; ?>  ( แบบประเมินชุดที่ 1 ) </h3>
-        <br />
+    <hr>
     <form action="se_g1_db.php" method="post" name="ev" class="form-horizontal" id="frm">
         <table border="1" class="table table-light table-bordered rounded shadow" style="overflow: hidden; " id="main_tb">
         <tr style="color: #fff; background-color: #59d7fd;">

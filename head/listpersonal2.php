@@ -68,7 +68,7 @@ $totalRows_rspersonal = mysql_num_rows($rspersonal);
     });
 
 </script>
-<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> ประเมิณเจ้าหน้าที่</h3>
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> ประเมินเจ้าหน้าที่</h3>
 <table id="example" class="display" cellspacing="0">
     <thead>
         <tr class="success">

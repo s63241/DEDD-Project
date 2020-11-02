@@ -50,6 +50,18 @@ $totalRows_editconfig = mysql_num_rows($editconfig);
       </div>
     </div>
 
+    <div class="form-group">
+      <div class="col-sm-4 control-label"> วันเริ่มต้น - สิ้นสุดการประเมิน  </div>
+      <div class="col-sm-4">
+        เปิด <br />
+        <input type="date" name="dq_date_open3" class="form-control"  required="required" value="<?php echo $row_editconfig['dq_date_open3'];?>">
+      </div>
+      <div class="col-sm-3">
+        ปิด <br />
+        <input type="date" name="dq_date_close3" class="form-control"  required="required" value="<?php echo $row_editconfig['dq_date_close3'];?>">
+      </div>
+    </div>
+
       <div class="form-group">
       <div class="col-sm-3 control-label"> เจ้าหน้าที่ </div>
       <div class="col-sm-3">
@@ -74,21 +86,6 @@ $totalRows_editconfig = mysql_num_rows($editconfig);
         <input type="date" name="dq_date_close2" class="form-control"  required="required" value="<?php echo $row_editconfig['dq_date_close2'];?>">
       </div>
     </div>
-
-
-    <div class="form-group">
-      <div class="col-sm-3 control-label"> ผู้อำนวยการ   </div>
-      <div class="col-sm-3">
-        เปิด <br />
-        <input type="date" name="dq_date_open3" class="form-control"  required="required" value="<?php echo $row_editconfig['dq_date_open3'];?>">
-      </div>
-      <div class="col-sm-3">
-        ปิด <br />
-        <input type="date" name="dq_date_close3" class="form-control"  required="required" value="<?php echo $row_editconfig['dq_date_close3'];?>">
-      </div>
-    </div>
-
-
 
      <div class="form-group">
       <div class="col-sm-3">   </div>

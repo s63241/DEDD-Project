@@ -221,7 +221,7 @@ display:none;
 <h4><?php echo $pname;?></h4>
 <table width="900" class="table table-bordered table-striped">
   <tr>
-    <td colspan="3"><center>ป.มสด.1 ผลส้มฤทธิ์ของงาน 70 คะแนน พิจารณาจากเกณฑ์ที่สำนักฯให้</center></td>
+    <td colspan="3"><center>ป.มสด.1 ผลสัมฤทธิ์ของงาน 70 คะแนน พิจารณาจากเกณฑ์ที่สำนักฯให้</center></td>
   </tr>
   <tr>
     <td>กิจกรรม/โครงการ/งาน</td>

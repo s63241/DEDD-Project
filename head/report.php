@@ -322,7 +322,7 @@ $tb1 = $tb1 . '</table>
 </table>
 <table id="bg-table" width="100%" style="border-collapse: collapse;margin-top:8px;">
   <tr style="">
-    <td style="" colspan="3"><center>แบบประเมินที่ 1 ผลส้มฤทธิ์ของงาน 70 คะแนน พิจารณาจากเกณฑ์ที่สำนักฯให้</center></td>
+    <td style="" colspan="3"><center>แบบประเมินที่ 1 ผลสัมฤทธิ์ของงาน 70 คะแนน พิจารณาจากเกณฑ์ที่สำนักฯให้</center></td>
   </tr>
   <tr style="">
     <td style="text-align: center;"><b>กิจกรรม/โครงการ/งาน</b></td>

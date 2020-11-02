@@ -262,7 +262,7 @@ font-family: "Garuda";
 </h4>
 <table id="bg-table" width="100%" style="border-collapse: collapse;font-size:12pt;margin-top:8px;">
   <tr style="border:1px solid #000;padding:4px;">
-    <td style="border-right:1px solid #000;padding:4px;" colspan="3"><center>ป.มสด.1 ผลส้มฤทธิ์ของงาน 70 คะแนน พิจารณาจากเกณฑ์ที่สำนักฯให้</center></td>
+    <td style="border-right:1px solid #000;padding:4px;" colspan="3"><center>ป.มสด.1 ผลสัมฤทธิ์ของงาน 70 คะแนน พิจารณาจากเกณฑ์ที่สำนักฯให้</center></td>
   </tr>
   <tr style="border:1px solid #000;padding:4px;">
     <td style="border-right:1px solid #000;padding:4px;">กิจกรรม/โครงการ/งาน</td>
