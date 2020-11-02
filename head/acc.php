@@ -86,7 +86,14 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_rsmember = $_SESSION['MM_Username'];
 }
 mysql_select_db($database_conn, $conn);
-$query_rsmember = sprintf("SELECT * FROM tbl_personal WHERE p_username = %s", GetSQLValueString($colname_rsmember, "text"));
+$query_rsmember = sprintf("
+  SELECT * FROM tbl_personal as p
+
+  INNER JOIN tbl_department as d  ON p.ref_d_id=d.d_id 
+  INNER JOIN tbl_position as s   ON p.ref_po_id=s.po_id 
+  
+
+  WHERE p.p_username = %s", GetSQLValueString($colname_rsmember, "text"));
 $rsmember = mysql_query($query_rsmember, $conn) or die(mysql_error());
 $row_rsmember = mysql_fetch_assoc($rsmember);
 $totalRows_rsmember = mysql_num_rows($rsmember);
@@ -96,6 +103,9 @@ $ref_d_id=$row_rsmember['ref_d_id'];
 $p_id = $row_rsmember['p_id'];
 $p_password = $row_rsmember['p_password'];
 $hid = $row_rsmember['ref_d_id'];
+
+$name = $row_rsmember['p_name'];
+$lname = $row_rsmember['p_lastname'];
 
 //echo $hid;
 //   else{

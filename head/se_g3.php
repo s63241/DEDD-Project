@@ -54,10 +54,10 @@ $showqg1list = mysql_query($query_showqg1list, $conn) or die(mysql_error());
         document.getElementById("total").value = total;
     }
 </script>
-<h4> ชุดที่ 3 </h4>
+<h3 class="text-primary prompt-400"> แบบประเมินชุดที่ 3 </h3>
 <form action="se_g3_db.php" method="post" name="ev" class="form-horizontal" id="frm">
-    <table border="1" class="table" id="main_tb">
-        <tr class="info">
+    <table border="1" class="table table-light table-bordered rounded shadow" style="overflow: hidden; " id="main_tb">
+        <tr style="color: #fff; background-color: #59d7fd;">
             <td>ข้อ</td>
             <td>หัวข้อ</td>
             <td>รายละเอียดการประเมิน</td>
@@ -94,8 +94,8 @@ $showqg1list = mysql_query($query_showqg1list, $conn) or die(mysql_error());
                     //   echo '</pre>';
                     // }
                     ?>
-                    <table width="100%" border="1" class="table table-hovered">
-                        <tr>
+                    <table width="100%" border="1" class="table table-hover rounded shadow-sm" style="border:none;overflow: hidden;">
+                        <tr style="background-color: #f3f3f3;">
                             <td>ระดับ</td>
                             <td>คะแนน</td>
                             <td>รายละเอียดการพิจารณา</td>
@@ -125,10 +125,8 @@ $showqg1list = mysql_query($query_showqg1list, $conn) or die(mysql_error());
                     </table>
                 </td>
             </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+            <tr  style="background-color: #59d7fd;" >
+                <td colspan="3"></td>
             </tr>
             <?php
             $k++;
@@ -162,8 +160,8 @@ $showqg1list = mysql_query($query_showqg1list, $conn) or die(mysql_error());
                     //   echo '</pre>';
                     // }
                     ?>
-                    <table width="100%" border="1" class="table table-hovered">
-                        <tr>
+                    <table width="100%" border="1" class="table table-hover rounded shadow-sm" style="border:none;overflow: hidden;">
+                        <tr style="background-color: #f3f3f3;">
                             <td>ระดับ</td>
                             <td>คะแนน</td>
                             <td>รายละเอียดการพิจารณา</td>
@@ -198,7 +196,7 @@ $showqg1list = mysql_query($query_showqg1list, $conn) or die(mysql_error());
         <tr>
             <td align="right" colspan="3">
                 รวม 
-                <input name="total" type="text" style="background-color: yellow; text-align: right; color:red" id="total" value="" required readonly="readonly">
+                <input name="total" type="text" class="rounded px-2 py-1" style=" border: 1px solid #ced4da; background-color: yellow; text-align: right; color:red" id="total" value="" required readonly="readonly">
             </td>
         </tr>
         <tr>

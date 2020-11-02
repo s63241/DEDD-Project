@@ -37,7 +37,7 @@
 	if($result){
    
 			echo "<script type='text/javascript'>";
-			echo  "alert('แก้ไขข้อมํลเรียบร้อยแล้ว');";
+			echo  "alert('แก้ไขข้อมูลเรียบร้อยแล้ว');";
 			echo "window.location='question1.php?qt_id=$ref_qt_id&p=add_q';";
 			echo "</script>";
 	  }

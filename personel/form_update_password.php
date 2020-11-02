@@ -1,4 +1,4 @@
-<h4 class="text-primary prompt-400">::ข้อมูลบุคลากร::</h4>
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> ข้อมูลบุคส่วนตัว</h3>
 <table class="table table-hover">
     <tbody>
         <tr>

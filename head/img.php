@@ -7,19 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
    
-
+    <?php require_once("../layouts/header_asset.php"); ?>
     <?php include('css.php');?>
   </head>
   <body>
+    <?php require_once("../layouts/header.php"); ?>
     <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <?php include('banner.php');?>
-    </div>
-  <div class="col-md-2">
+  <div class="row py-3">
+
+  <div class="col-md-3">
       <?php include('menu.php');?>
   </div>
-    <div class="col-md-10">
+    <div class="col-md-9">
      <?php 
 
        

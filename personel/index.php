@@ -43,6 +43,8 @@ if ($img == '') {
                             include('se_g2.php');
                         } elseif ($p == 'se3') {
                             include('se_g3.php');
+                        }elseif ($p=='list') {
+                            include('listpersonal.php');
                         } elseif ($p == 'report') {
                             include('report.php');
                             //include('report_bk.php');

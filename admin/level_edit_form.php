@@ -41,7 +41,7 @@ $editpo = mysql_query($query_editpo, $conn) or die(mysql_error());
 $row_editpo = mysql_fetch_assoc($editpo);
 $totalRows_editpo = mysql_num_rows($editpo);
 ?>
-<h4>::อัพเดทสิทธิ์การใช้งาน::</h4>
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> แก้ไขข้อมูลสิทธิ์การเข้าใช้งาน</h3>
 <form id="form1" name="form1" method="post" action="level_edit_db.php" class="form-horizontal">
   <div class="form-group">
       <div class="col-sm-3"> สิทธิ์การใช้งาน </div>

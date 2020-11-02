@@ -41,7 +41,7 @@ $updateq3 = mysql_query($query_updateq3, $conn) or die(mysql_error());
 $row_updateq3 = mysql_fetch_assoc($updateq3);
 $totalRows_updateq3 = mysql_num_rows($updateq3);
 ?>
-<h4> ::UPDATE DATA:: </h4> 
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> แก้ไขคำถามชุดที่ 3</h3>
 <form id="form1" name="form1" method="post" action="question3_edit_db.php" class="form-horizontal">
   <div class="form-group">
       <div class="col-sm-2"> ชื่อประเภทคำถาม </div>

@@ -31,8 +31,9 @@ if (!function_exists("GetSQLValueString")) {
 }
 mysql_select_db($database_conn, $conn);
 $query_rspersonal = "
-SELECT * FROM tbl_score as c,  tbl_personal as p, tbl_position as n, tbl_department as d  
-WHERE c.ref_p_id=p.p_id
+SELECT * FROM tbl_score as c, tbl_personal as p, tbl_position as n, tbl_department as d  
+WHERE p.ref_po_id = '4'
+AND c.ref_p_id=p.p_id
 AND p.ref_po_id=n.po_id
 AND p.ref_d_id=d.d_id
 AND p.ref_d_id=$hid
@@ -67,7 +68,7 @@ $totalRows_rspersonal = mysql_num_rows($rspersonal);
     });
 
 </script>
-<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> ตรวจสอบสถานะ</h3>
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> ประเมิณเจ้าหน้าที่</h3>
 <table id="example" class="display" cellspacing="0">
     <thead>
         <tr class="success">
@@ -84,8 +85,9 @@ do { ?>
     <tr>
         <td><?php echo $k; //row_rspersonal['s_id'];  ?></td>
         <td>
-            <b style="color:blue"> <?php echo $row_rspersonal['p_firstname'] . $row_rspersonal['p_name'] . ' ' . $row_rspersonal['p_lastname']; ?></b> 
-            <br />ตำแหน่ง :  <?php echo $row_rspersonal['po_name']; ?>
+            <b style="color:blue"> <?php echo $row_rspersonal['p_firstname'] . $row_rspersonal['p_name'] . ' ' . $row_rspersonal['p_lastname']; ?>
+            </b> 
+            <br /> ตำแหน่ง :  <?php echo $row_rspersonal['po_name']; ?>
             <br /><?php echo $row_rspersonal['d_name']; ?>
         </td>
         <td><?php echo $row_rspersonal['ref_dq_id']; ?></td>
@@ -98,7 +100,7 @@ do { ?>
             if ($id1 != 0 & $id2 == 0 & $id3 == 0) {
                 echo 'รอหัวหน้าฝ่ายประเมิน';
             } elseif ($id1 != 0 & $id2 != 0 & $id3 == 0) {
-                echo 'ทำการประเมินแล้ว';
+                echo 'หัวหน้าฝ่ายประเมินแล้ว';
             } elseif ($id1 != 0 & $id2 != 0 & $id3 != 0) {
                 echo 'ผอ.ประเมินแล้ว';
             }
@@ -113,7 +115,7 @@ do { ?>
 
             if ($s_p_id_2 == 0) {
                 ?>
-                <a href="index.php?p=g1&p_id=<?php echo $ref_p_id; ?>&term=<?php echo $lastterm; ?>" class="btn btn-primary btn-xs" target="_blank">ประเมิน</a>
+                <a href="index.php?p=g1&p_id=<?php echo $ref_p_id; ?>&term=<?php echo $lastterm; ?>" class="btn btn-primary btn-xs" target="">ประเมิน</a>
 
                 <?php
             } else {

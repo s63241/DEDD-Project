@@ -33,6 +33,7 @@ $query_showqg1list = "SELECT * FROM tbl_q2_group order by qg2_id ASC";
 $showqg1list = mysql_query($query_showqg1list, $conn) or die(mysql_error());
 $row_showqg1list = mysql_fetch_assoc($showqg1list);
 $totalRows_showqg1list = mysql_num_rows($showqg1list);
+$totalScore = 0;
 ?>
 <style>
 input[type=number]{
@@ -54,10 +55,10 @@ width: 80px;
     document.getElementById("total").value = total;    
 }
 </script>
-<h4> ชุดที่ 2 </h4>
+<h3 class="text-primary prompt-400"> แบบประเมินชุดที่ 2 </h3>
 <form action="se_g2_db.php" method="post" name="ev" class="form-horizontal" id="frm">
-  <table border="1" class="table" id="main_tb">
-    <tr class="info">
+  <table border="1" class="table table-light table-bordered rounded shadow" style="overflow: hidden; " id="main_tb">
+        <tr style="color: #fff; background-color: #59d7fd;">
      <td>ข้อ</td>
       <td>หัวข้อ</td>
       <td>รายละเอียดการประเมิน</td>
@@ -78,6 +79,7 @@ width: 80px;
         $row_rsquint1 = mysql_fetch_assoc($rsquint1);
         $totalRows_rsquint1 = mysql_num_rows($rsquint1);
         $term = $_GET['term'];
+  
         $colname_scoreg1 = "-1";
         if (isset($_GET['p_id'])) {
         $colname_scoreg1 = $_GET['p_id'];
@@ -99,8 +101,8 @@ width: 80px;
           // print_r($row_scoreg1);
         // echo '</pre>';
         ?>
-        <table width="100%" border="1" class="table table-hovered">
-          <tr>
+        <table width="100%" border="1" class="table table-hover rounded shadow-sm" style="border:none;overflow: hidden;">
+                        <tr style="background-color: #f3f3f3;">
             <td>ระดับ</td>
             <td>คะแนน</td>
             <td>รายละเอียดการพิจารณา</td>
@@ -130,27 +132,31 @@ width: 80px;
               
               
               <!--
-              <input type="hidden" name="ref_q1_number[]" required="required"  value="<?php// echo $row_rsquint1['q2_id']; ?>" />
-              <input type="number" name="s_score[]" required="required" max="<?php //echo $row_rsquint1['q2_score_rank']; ?>" min="0" class="form-control" step="0.01"/> -->
+              <input type="hidden" name="ref_q1_number[]" required="required"  value="// echo $row_rsquint1['q2_id']; " />
+              <input type="number" name="s_score[]" required="required" max=" //echo $row_rsquint1['q2_score_rank']; " min="0" class="form-control" step="0.01"/> -->
             </td>
           </tr>
-          <?php } while ($row_rsquint1 = mysql_fetch_assoc($rsquint1))  ;}  ?>
+          <?php 
+        $totalScore = $totalScore+$row_scoreg1['s_score'];
+        }
+        
+        while ($row_rsquint1 = mysql_fetch_assoc($rsquint1))  ;  }  ?>
         </table>
         
         
         
       </td>
     </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <?php } while ($row_showqg1list = mysql_fetch_assoc($showqg1list)); ?>
+    <tr  style="background-color: #59d7fd;" >
+                <td colspan="3"></td>
+            </tr>
+    <?php 
+    
+  } while ($row_showqg1list = mysql_fetch_assoc($showqg1list)); ?>
     <tr>
             <td align="right" colspan="3">
               รวม 
-              <input name="total" type="text" style="background-color: yellow; text-align: right; color:red" id="total" value="" required readonly="readonly">
+              <input name="total" type="text" class="rounded px-2 py-1" style=" border: 1px solid #ced4da; background-color: yellow; text-align: right; color:red" id="total" value="<?= $totalScore ?>" required readonly="readonly">
             </td>
           </tr>
   </table>

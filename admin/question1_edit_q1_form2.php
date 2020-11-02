@@ -45,7 +45,7 @@ $totalRows_editq1 = mysql_num_rows($editq1);
 <div class="row">
   <div class="col-sm-12">
 <hr />
-<h4>::แก้ไขคำถาม ป.มสด.1::</h4>
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> แก้ไขคำถามชุดที่ 1</h3>
 <form id="form2" name="form2" method="post" action="question1_edit_q1_form2_db.php" class="form-horizontal">
   <div class="form-group">
     <div class="col-sm-2"> ระดับ  </div>

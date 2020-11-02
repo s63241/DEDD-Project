@@ -72,7 +72,7 @@ $rsedit = mysql_query($query_rsedit, $conn) or die(mysql_error());
 $row_rsedit = mysql_fetch_assoc($rsedit);
 $totalRows_rsedit = mysql_num_rows($rsedit);
 ?>
-<h4 align="center">::UPDATE PERSONAL::</h4>
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> แก้ไขข้อมูลบุคลากร</h3>
 <hr/>
 <form id="form1" name="form1" method="post" action="personal_edit_db.php" class="form-horizontal">
 <div class="form-group">

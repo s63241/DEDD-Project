@@ -34,7 +34,7 @@
 	if($result){
    
 			echo "<script type='text/javascript'>";
-			echo  "alert('แก้ไขข้อมํลเรียบร้อยแล้ว');";
+			echo  "alert('แก้ไขข้อมูลเรียบร้อยแล้ว');";
 			echo "window.location='question3.php?qg3_id=$qg3_id&p=add_q';";
 			echo "</script>";
 	  }

@@ -124,11 +124,11 @@ function validateLocation($username, $loginStrGroup) {
     if ($roleID == 1) {
         $MM_redirectLoginSuccess = "admin/index.php";
     } else if ($roleID == 2) {
-        $MM_redirectLoginSuccess = "head/page.php";
+        $MM_redirectLoginSuccess = "head/index.php";
     } else if ($roleID == 3) {
         $MM_redirectLoginSuccess = "boss/index.php";
     } else if ($roleID == 4) {
-        $MM_redirectLoginSuccess = "personel/page.php";
+        $MM_redirectLoginSuccess = "personel/index.php";
     }
     header("Location: " . $MM_redirectLoginSuccess);
 }

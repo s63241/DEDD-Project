@@ -294,7 +294,7 @@ td{
     border-right:1px solid #000;padding:4px;
 }
 </style>
-<h4 style="text-align: center;padding:0px;margin:0px;">แบบสรุปการประเมินผลการปฏิบัติราชการของมหาวิทยาลัยสวนดุสิต</h4>
+<h4 style="text-align: center;padding:0px;margin:0px;">แบบสรุปการประเมินผลการปฏิบัติงาน</h4>
 <p style="text-align: center;padding:0px;margin:0px;"><strong>หน่วยงาน</strong> ' . $departmentName . '</p>
 <table width="100%" >';
 $countdate = 0;
@@ -322,7 +322,7 @@ $tb1 = $tb1 . '</table>
 </table>
 <table id="bg-table" width="100%" style="border-collapse: collapse;margin-top:8px;">
   <tr style="">
-    <td style="" colspan="3"><center>ป.มสด.1 ผลส้มฤทธิ์ของงาน 70 คะแนน พิจารณาจากเกณฑ์ที่สำนักฯให้</center></td>
+    <td style="" colspan="3"><center>แบบประเมินที่ 1 ผลส้มฤทธิ์ของงาน 70 คะแนน พิจารณาจากเกณฑ์ที่สำนักฯให้</center></td>
   </tr>
   <tr style="">
     <td style="text-align: center;"><b>กิจกรรม/โครงการ/งาน</b></td>
@@ -348,7 +348,7 @@ $tb1 = $tb1 . '</table>
 ;
 $tb2 = '<table id="bg-table" width="100%" style="border-collapse: collapse;margin-top:8px;">
   <tr style="">
-    <td style="text-align:center;" colspan="7"><b>ป.มสด.2 พฤติกรรมการปฏิบัติงาน 30 คะแนน</b></td>
+    <td style="text-align:center;" colspan="7"><b>แบบประเมินที่ 2 พฤติกรรมการปฏิบัติงาน 30 คะแนน</b></td>
   </tr>
   <tr>
     <td style="text-align:center;"><b>สมรรถนะหลัก</b></td>
@@ -360,7 +360,7 @@ $tb2 = '<table id="bg-table" width="100%" style="border-collapse: collapse;margi
     <td style="text-align:center;"><b>คะแนนที่ได้</b></td>
   </tr>
   <tr style="">
-    <td style="" height="39">1.ความเป็นสวนดุสิต</td>
+    <td style="" height="39">1.ความเป็นองค์กร</td>
     <td style="text-align:center;">3</td>
     <td style="text-align:center;">' . $row_sumg2['TG2SCORE'] . '</td>
     <td style="" rowspan="2">1.ความรู้และทักษะที่จำเป็นสำหรับการปฏิบัติงานตามหน้าที่รับผิดชอบ</td>
@@ -394,7 +394,7 @@ $tb2 = '<table id="bg-table" width="100%" style="border-collapse: collapse;margi
     <td style="text-align:center;" rowspan="2">' . $TG3SCORE3 . '</td>
   </tr>
   <tr style="">
-    <td style="">6.ความเข้าใจมหาวิทยาลัย</td>
+    <td style="">6.ความเข้าใจในองค์กร</td>
     <td style="text-align:center;">2</td>
     <td style="text-align:center;">' . $row_sumg7['TG2SCORE5'] . '</td>
   </tr>
@@ -412,7 +412,7 @@ $summary = $tg20 + $totalg1;
 $tb3 = '
 <table id="bg-table" width="100%" style="border-collapse: collapse;margin-top:8px;">
   <tr style="">
-    <td style="text-align:center;" colspan="5"><b>ป.มสด.3 (100 คะแนน)</b></td>
+    <td style="text-align:center;" colspan="5"><b>แบบประเมินที่ 3 (100 คะแนน)</b></td>
   </tr>
   <tr style="">
     <td style="text-align:center;" width="171"><b>องค์ประการประเมิน</b></td>
@@ -447,7 +447,7 @@ $tb3_1 = '
     </td>
   </tr>
   <tr style="">
-    <td style="" height="88">พฤติกรรมการปฏิบัติงาน (ป.มสด.2)</td>
+    <td style="" height="88">พฤติกรรมการปฏิบัติงาน </td>
     <td style="text-align:center;">30 คะแนน</td>
     <td style="text-align:center;">' . $tol . '</td>
   </tr>

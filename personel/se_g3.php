@@ -44,8 +44,7 @@ $totalRows_showqg2list = mysql_num_rows($showqg2list);
         width: 80px;
     }
 </style>
-<hr>
-<h4>ชุดที่ 3</h4>
+<h3 class="text-primary prompt-400"> แบบประเมินชุดที่ 3 </h3>
 <hr>
 <form action="se_g3_db.php" method="post" name="ev" class="form-horizontal" id="frm">
     <table border="1" class="table table-light table-bordered rounded shadow" style="overflow: hidden; " id="main_tb">

@@ -1,74 +1,32 @@
-<h3>::ข้อมูลส่วนตัว::</h3>
-<form action="form_update_password_db.php" method="post" enctype="multipart/form-data" name="form1" id="form1" class="form-horizontal">
-	
-<div class="form-group">
-		<div class="col-sm-2">
-			ชื่อ
-		</div>
-		<div class="col-sm-4">
-  <input type="text" name="p_password1" disabled="disabled" value="<?php echo $name;?>" class="form-control"/>
-</div>
-</div>
-
-<div class="form-group">
-	<div class="col-sm-2">
-			นามสกุล
-		</div>
-		<div class="col-sm-4">
-  <input type="text" name="p_password1" disabled="disabled" value="<?php echo $lname;?>" class="form-control"/>
-</div>
-</div>
-
-<div class="form-group">
-	<div class="col-sm-2">
-			ตำแหน่ง   
-		</div>
-		<div class="col-sm-4">
-  <input type="text" name="p_password1" disabled="disabled" value="<?php echo $row_rsmember['po_name'];?>" class="form-control">
-</div>
-</div>
-
-<div class="form-group">
-	<div class="col-sm-2">
-			เบอร์โทร 
-		</div>
-		<div class="col-sm-4">
-  <input type="text" name="p_password1" disabled="disabled" value="<?php echo $row_rsmember['p_phone'];;?>" class="form-control"/>
-</div>
-</div>
-<div class="form-group">
-	<div class="col-sm-2">
-			อีมเล์ 
-		</div>
-		<div class="col-sm-4">
-  <input type="text" name="p_password1" disabled="disabled" value="<?php echo $row_rsmember['p_email'];;?>" class="form-control"/>
-</div>
-</div>
-
-<div class="form-group">
-	<div class="col-sm-2">
-			หน่วยงาน  
-		</div>
-		<div class="col-sm-4">
-  <input type="text" name="p_password1" disabled="disabled" value="<?php echo $row_rsmember['d_name'];?>" class="form-control">
-</div>
-</div>
-
- 
-<!-- 
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> ข้อมูลบุคส่วนตัว</h3>
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <td class="text-right"><strong>ชื่อ</strong></td>
+            <td class="text-left"><?=$name?></td>
+        </tr>
+        <tr>
+            <td class="text-right"><strong>นามสกุล</strong></td>
+            <td class="text-left"><?=$lname?></td>
+        </tr>
+        <tr>
+            <td class="text-right"><strong>ตำแหน่ง</strong></td>
+            <td class="text-left"><?=$row_rsmember['po_name']?></td>
+        </tr>
+        <tr>
+            <td class="text-right"><strong>เบอร์โทร</strong></td>
+            <td class="text-left"><?=$row_rsmember['p_phone'];?></td>
+        </tr>
+        <tr>
+            <td class="text-right"><strong>อีเมล์</strong></td>
+            <td class="text-left"><?=$row_rsmember['p_email'];?></td>
+        </tr>
+        <tr>
+            <td class="text-right"><strong>หน่วยงาน</strong></td>
+            <td class="text-left"><?=$row_rsmember['d_name']?></td>
+        </tr>
+        
+    </tbody>
+</table>
 
 
-
-	<div class="form-group">
-		<div class="col-sm-4">
-  <input type="text" name="p_password1" disabled="disabled" value="<?php echo $p_password;?>" class="form-control"/>
-</div>
-</div>
-<div class="form-group">
-		<div class="col-sm-4">
-  <input type="text" name="p_password" required  class="form-control"/>
-</div>
-</div> -->
-<!--   <input type="hidden" name="p_id" value="<?php echo $p_id;?>">
-  <input type="submit" name="button" id="button" value="Submit" /> -->
-</form>

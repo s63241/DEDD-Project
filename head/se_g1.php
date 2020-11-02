@@ -66,21 +66,26 @@ $datenow = date('Y-m-d');
 $dq_date_open1 = $row_fixdate['dq_date_open2'];
 $dq_date_close1 = $row_fixdate['dq_date_close2'];
 $totalScore = 0;
-echo '<h3>';
-echo 'วันที่เริ่มประเมิน : ' . date('d/m/Y', strtotime($dq_date_open1));
-echo ' วันที่สิ้นสุด :  ' . date('d/m/Y', strtotime($dq_date_close1));
+echo '<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i>';
+echo ' วันที่เริ่มประเมิน : ' . date('d/m/Y', strtotime($datestart));
+echo ' วันที่สิ้นสุด :  ' . date('d/m/Y', strtotime($dateend));
 echo '</h3>';
-if ($datenow >= $dq_date_open1 && $datenow <= $dq_date_close1) {
+if ($datenow >= $datestart && $datenow <= $dateend) {
     ?>
-    <h4> ชุดที่ 1 </h4>
+    <hr>
+    <h3 class="text-primary prompt-400"> รอบประเมิน <?php echo $row_peroidassess['dq_name']; ?>  ( แบบประเมินชุดที่ 1 ) </h3>
+        <br />
     <form action="se_g1_db.php" method="post" name="ev" class="form-horizontal" id="frm">
-        <table border="1" class="table" id="main_tb">
-            <tr class="info">
+        <table border="1" class="table table-light table-bordered rounded shadow" style="overflow: hidden; " id="main_tb">
+        <tr style="color: #fff; background-color: #59d7fd;">
                 <td width="5%">ข้อ</td>
                 <td width="10%">หัวข้อ</td>
                 <td width="85%">รายละเอียดการประเมิน</td>
             </tr>
-            <?php do { ?>
+            <?php $idx = 0; ?>
+            <?php do { 
+                $index = 0;
+                ?>
                 <tr>
                     <td><?php echo $row_showqg1list['qt_id']; ?></td>
                     <td><?php echo $row_showqg1list['qt_name']; ?>
@@ -118,8 +123,8 @@ if ($datenow >= $dq_date_open1 && $datenow <= $dq_date_close1) {
                         $row_scoreg1 = mysql_fetch_assoc($scoreg1);
                         $totalRows_scoreg1 = mysql_num_rows($scoreg1);
                         ?>
-                        <table width="100%" border="1" class="table table-hovered">
-                            <tr>
+                        <table width="100%" border="1" class="table table-hover rounded shadow-sm" style="border:none;overflow: hidden;">
+                        <tr style="background-color: #f3f3f3;">
                                 <td width="5%">ระดับ</td>
                                 <td width="15%">คะแนน</td>
                                 <td width="75%">รายละเอียดการพิจารณา</td>
@@ -128,9 +133,43 @@ if ($datenow >= $dq_date_open1 && $datenow <= $dq_date_close1) {
                             <?php
                             $i = 1;
                             if ($totalRows_rsquint1 > 0) {
+                                $idx++;
                                 do {
+                                    
+                                    //EDIT
+                                    $range = $row_scoreg1['q1_number'];
+                                    $ref_q1_number = $row_scoreg1['ref_qt_id'];
+                        $query_scoreg2 = "SELECT * FROM tbl_q1  WHERE ref_qt_id = $ref_q1_number";
+                                        $scoreg2 = mysql_query($query_scoreg2, $conn) or die(mysql_error());
+                                        $totalRows_scoreg2 = mysql_num_rows($scoreg2);
+                                        while($row = mysql_fetch_assoc($scoreg2)) {
+                                            // var_dump($row);
+                                            ?>
+                                            <tr>
+                                        <td><?php echo $row['q1_number']; ?></td>
+                                        <td><?php echo $row['q1_score_rank']; ?>-<?php echo $row['q1_score_rank_max']; ?></td>
+                                        <td><?php echo $row['q1_detail']; ?></td>
+                                        <td>
+                                            <input type="hidden" name="s_p_id_2"  value="<?php echo $p_id; ?>" />
+                                            <input type="hidden" name="s_p_id_1"  value="<?php echo $_GET['p_id']; ?>" />
+                                            <input type="hidden" name="s_ip2" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>" />
+                                            <input type="hidden" name="s_dateq2" value="<?php echo date('Y-m-d H:i:s'); ?>" />
+                                            <input type="hidden" name="s_group_no" value="1" />
+                                            <input type="hidden" name="range[]" value="<?= $row['q1_number']; ?>" />
+                                            <input type="hidden" name="ref_dq_id" value="<?php echo $_GET['term']; ?>" />
+                                            <input type="hidden" name="s_id[]" required="required"  value="<?php echo $row_scoreg1['s_id']; ?>" />
+                                            <input type="hidden" name="ref_qt_id[]" required="required"  value="<?php echo $row_scoreg1['ref_qt_id']; ?>" />
+                                            <?php $score_value = ($range == $row['q1_number'])? $row_scoreg1['s_score']:"";  ?>
+                                            <!-- <input type="number" name="s_score[]" data-total="total" data-id="score<?php echo $idx; ?>" data-value="<?= $row_scoreg1['s_score']; ?>"  value="<?php echo $score_value; ?>"  step="any" max="<?php echo $row['q1_score_rank_max']; ?>" min="<?= $row['q1_score_rank'] ?>" class="form-control input" id="<?= $index++; ?>"  onchange='updateTotal();'/> -->
+
+                                            <input type="number" name="s_score[]" data-total="total" data-id="score<?php echo $idx; ?>" data-value="<?= $row_scoreg1['s_score']; ?>"  value="<?php echo $score_value; ?>"  step="any" max="<?php echo $row['q1_score_rank_max']; ?>" min="<?= $row['q1_score_rank'] ?>" class="form-control input" id="<?= $index++; ?>"/>
+
+                                        </td>
+                                    </tr> 
+                                            <?php
+                                        }
                                     ?>
-                                    <tr>
+                                    <!-- <tr>
                                         <td><?php echo $i; ?></td>
                                         <td><?php echo $row_scoreg1['q1_score_rank']; ?>-<?php echo $row_scoreg1['q1_score_rank_max']; ?></td>
                                         <td><?php echo $row_scoreg1['q1_detail']; ?></td>
@@ -144,26 +183,90 @@ if ($datenow >= $dq_date_open1 && $datenow <= $dq_date_close1) {
                                             <input type="hidden" name="s_id[]" required="required"  value="<?php echo $row_scoreg1['s_id']; ?>" />
                                             <input type="number" name="s_score[]" data-id="score" data-value="<?= $row_scoreg1['s_score']; ?>"  value="<?php echo $row_scoreg1['s_score']; ?>"  step="any" max="<?php echo $row_scoreg1['q1_score_rank_max']; ?>" min="0" class="form-control input"  onchange='updateTotal();'/>
                                         </td>
-                                    </tr>
+                                    </tr>  -->
                                     <?php
                                     $totalScore = $totalScore+$row_scoreg1['s_score'];
                                     $i++;
-                                } while ($row_scoreg1 = mysql_fetch_assoc($scoreg1));
-                            }
+                                    } while ($row_scoreg1 = mysql_fetch_assoc($scoreg1));
+                                    }
                             ?>
                         </table>
                     </td>
                 </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
+                <tr  style="background-color: #59d7fd;" >
+                <td colspan="3"></td>
+            </tr>
+                <script type="text/javascript">
+    /* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+function calculateAll() {
+    var totalAmt = 0;
+    var scores = $('input[data-id="score"]');
+    $.each(scores, function (key, value) {
+        var score = value.value;
+        //console.log(score);
+        if (score !== '') {
+            score = parseFloat(value.value);
+            totalAmt = totalAmt + score;
+        }
+    });
+    console.log(totalAmt);
+    $('#total').val(totalAmt);
+}
+
+function calculateAll2() {
+    var totalAmt = 0;
+    var scores = $('input[data-total="total"]');
+    $.each(scores, function (key, value) {
+        var score = value.value;
+        //console.log(score);
+        if (score !== '') {
+            score = parseFloat(value.value);
+            totalAmt = totalAmt + score;
+        }
+    });
+    console.log(totalAmt);
+    $('#total').val(totalAmt);
+}
+
+$(document).ready(function () {
+
+
+    $('input[data-id="score<?= $idx; ?>"]').on('change', function () {
+        // console.log('this: '+this.value);
+            var flag = true;
+            var idx = this.id;
+            var score = parseFloat(this.value);
+            if (score > parseFloat(this.max) || score < parseFloat(this.min)) {
+                this.value = '';
+                alert('คะแนนต้องอยู่ระหว่าง ' + parseFloat(this.min) + '-' + parseFloat(this.max));
+
+                return false;
+            }
+            $('input[data-id="score<?= $idx; ?>"]').each(function() {
+                
+                if(this.id != idx){
+                    console.log("id: "+this.id+",value:"+this.value);
+                    this.value = "";
+                }
+              
+            });
+        // calculateAll();
+        calculateAll2();
+    });
+
+
+});
+</script>
             <?php } while ($row_showqg1list = mysql_fetch_assoc($showqg1list)); ?>
             <tr>
                 <td align="right" colspan="3">
                     รวม 
-                    <input name="total" type="text" style="background-color: yellow; text-align: right; color:red" id="total" value="<?=$totalScore?>" required readonly="readonly">
+                    <input name="total" type="text" class="rounded px-2 py-1" style=" border: 1px solid #ced4da; background-color: yellow; text-align: right; color:red" id="total" value="<?=$totalScore?>" required readonly="readonly">
                 </td>
             </tr>
         </table>
@@ -196,4 +299,38 @@ if ($datenow >= $dq_date_open1 && $datenow <= $dq_date_close1) {
     <p align="center"> <a href="index.php?p=report">  Report </a> </p>
 <?php } ?>
 
-<script type="text/javascript" src="../js/validate_question_3.js"></script>
+<script type="text/javascript">
+   $('#bt_submit').on('click', function () {
+        var isCorrect = true;
+        var tables = $("#main_tb").find('table');
+        $.each(tables, function (key, table) {
+            var inputs = $(this).find('input[data-id="score"]');
+            var count = 0;
+            $.each(inputs, function (key2, input) {
+                var score = input.value;
+                if (score === '') {
+                    isCorrect = false;
+                    count++;
+                    return false;
+                }
+
+            });
+            if (count > 0) {
+                isCorrect = false;
+                alert('กรุณากรอกให้ครบทุกข้อ');
+                return false;
+            }
+
+        });
+        if (isCorrect === true) {
+            if (confirm('ยืนยันการประเมิน')) {
+                $('#frm').submit();
+            }
+        }
+
+
+    });
+    
+</script>
+
+<!-- <script type="text/javascript" src="../js/validate_question_3.js"></script> -->

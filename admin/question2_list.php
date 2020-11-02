@@ -65,7 +65,7 @@ $totalRows_listquestion2 = mysql_num_rows($listquestion2);
       <td><?php echo $row_listquestion2['qg2_fullscore']; ?></td>
       <td><?php echo $row_listquestion2['qg2_score_rank']; ?></td>
       <td>
-         <a href="question2.php?qg2_id=<?php echo $row_listquestion2['qg2_id']; ?>&p=add_q" class="btn btn-info btn-xs" target=_blank>+คำถาม</a>
+         <a href="question2.php?qg2_id=<?php echo $row_listquestion2['qg2_id']; ?>&p=add_q" class="btn btn-info btn-xs" >+คำถาม</a>
       </td>
       <td>
         <a href="question2.php?qg2_id=<?php echo $row_listquestion2['qg2_id']; ?>&p=edit" class="btn btn-warning btn-xs">แก้ไข</a></td>

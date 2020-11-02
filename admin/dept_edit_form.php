@@ -41,7 +41,7 @@ $editpo = mysql_query($query_editpo, $conn) or die(mysql_error());
 $row_editpo = mysql_fetch_assoc($editpo);
 $totalRows_editpo = mysql_num_rows($editpo);
 ?>
-<h4>::UPDATE dept::</h4>
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> แก้ไขข้อมูลหน่วยงาน</h3>
 <form id="form1" name="form1" method="post" action="dept_edit_db.php" class="form-horizontal">
   <div class="form-group">
       <div class="col-sm-3"> ชื่อหน่วยงาน </div>

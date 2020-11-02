@@ -54,7 +54,7 @@ $totalRows_rsq = mysql_num_rows($rsq);
 ?>
 <div class="row">
   <div class="col-sm-12">
-    <h4>:: ประเภทคำถามชุดที่ 1 ::</h4>
+  <h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> ประเภทคำถามชุดที่ 1</h3>
     <form id="form1" name="form1" method="post" action="question1_edit_db.php" class="form-horizontal">
       <div class="form-group">
         <div class="col-sm-3"> ชื่อประเภทคำถาม </div>
@@ -75,7 +75,7 @@ $totalRows_rsq = mysql_num_rows($rsq);
 <div class="row">
   <div class="col-sm-12">
     <hr />
-    <h4>:: เพิ่มคำถามชุดที่ 1 ::</h4>
+    <h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> เพิ่มคำถามชุดที่ 1</h3>
     <form id="form2" name="form2" method="post" action="question1_edit_form2_save_db.php" class="form-horizontal">
       <div class="form-group">
         <div class="col-sm-2"> ระดับ </div>

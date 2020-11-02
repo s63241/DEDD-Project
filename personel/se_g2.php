@@ -41,7 +41,7 @@ $totalRows_showqg1list = mysql_num_rows($showqg1list);
     }
 </style>
 <hr>
-<h4>ชุดที่ 2</h4>
+<h3 class="text-primary prompt-400"> แบบประเมินชุดที่ 2 </h3>
 <hr>
 <form action="se_g2_db.php" method="post" name="ev" class="form-horizontal" id="frm">
     <table border="1" class="table table-light table-bordered rounded shadow" style="overflow: hidden; " id="main_tb">
@@ -64,7 +64,7 @@ $totalRows_showqg1list = mysql_num_rows($showqg1list);
                     ?>
                     <table width="100%" border="1" class="table table-hover rounded shadow-sm" style="border:none;overflow: hidden;">
                         <tr style="background-color: #f3f3f3;">
-                            <td>ระดับ</td>
+                            <td>ข้อ</td>
                             <td>คะแนน</td>
                             <td>รายละเอียดการพิจารณา</td>
                             <td>ใส่คะแนน</td>

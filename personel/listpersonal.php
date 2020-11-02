@@ -56,7 +56,7 @@ $totalRows_rspersonal = mysql_num_rows($rspersonal);
     });
 
 </script>
-<h3> ::HISTORY OF ASSESS::</h3>
+<h3 class="text-primary prompt-400"><i class="fa fa-bookmark" aria-hidden="true"></i> ตรวจสอบสถานะ</h3>
 <table id="example" class="display" cellspacing="0">
     <thead>
         <tr class="success">
@@ -75,7 +75,7 @@ $totalRows_rspersonal = mysql_num_rows($rspersonal);
             <td>
                 <b>
         <?php echo $row_rspersonal['p_firstname'] . $row_rspersonal['p_name'] . ' ' . $row_rspersonal['p_lastname']; ?></b> 
-                ตำแหน่ง : <?php echo $row_rspersonal['po_name']; ?>
+            <br />ตำแหน่ง :  <?php echo $row_rspersonal['po_name']; ?>
             </td>
             <td><?php echo $row_rspersonal['ref_dq_id']; ?></td>
             <td>
@@ -85,11 +85,9 @@ $totalRows_rspersonal = mysql_num_rows($rspersonal);
                 $id3 = $row_rspersonal['s_p_id_3'];
                 // echo $id1. ' -' .$id2. '- '.$id3;
                 if ($id1 != 0 & $id2 == 0 & $id3 == 0) {
-                    echo 'ตัวเองประเมินแล้ว';
+                    echo 'รอหัวหน้าฝ่ายประเมิน';
                 } elseif ($id1 != 0 & $id2 != 0 & $id3 == 0) {
                     echo 'หัวหน้าฝ่ายประเมินแล้ว';
-                } elseif ($id1 != 0 & $id2 != 0 & $id3 != 0) {
-                    echo 'ผอ. ประเมินแล้ว';
                 }
                 ?>
 
